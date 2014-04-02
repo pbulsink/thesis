@@ -1,0 +1,54 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}What is \LaTeX ?}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Why Use \LaTeX ?}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Possible Reasons Not To Use \LaTeX }{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Where to Find \LaTeX ?}{3}{section.1.4}
+\contentsline {chapter}{\numberline {2}Creating Your Source File}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Description of Source File(s)}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Organizing Your Source File}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Editing Your Source File}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Parts of the Master Source File}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Preamble}{5}{subsection.2.4.1}
+\contentsline {subsubsection}{Examples of the \textbackslash \texttt {documentclass} Command}{5}{section*.4}
+\contentsline {subsection}{\numberline {2.4.2}The Logical Document}{6}{subsection.2.4.2}
+\contentsline {subsubsection}{Example Master Source File}{6}{section*.5}
+\contentsline {chapter}{\numberline {3}Example \LaTeX \ Commands for Typical Large Documents}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Selected Text Structures}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Basic In-Line Commands}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Chapters, Sections and Subsections}{12}{subsection.3.1.2}
+\contentsline {subsubsection}{Long Headings and the Table of Contents}{13}{section*.6}
+\contentsline {subsubsection}{Unnumbered sections}{13}{section*.7}
+\contentsline {subsection}{\numberline {3.1.3}Displayed Text Structures}{13}{subsection.3.1.3}
+\contentsline {subsubsection}{Lists}{13}{section*.8}
+\contentsline {subsubsection}{Quotations}{14}{section*.9}
+\contentsline {subsubsection}{Free-Form Text}{15}{section*.10}
+\contentsline {section}{\numberline {3.2}Cross-References}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}Text Fonts}{16}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Font Selection}{16}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Font Family, Series, and Shape Selection}{16}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Text Size}{17}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Figures}{17}{section.3.4}
+\contentsline {section}{\numberline {3.5}Tables}{18}{section.3.5}
+\contentsline {section}{\numberline {3.6}Math Structures}{20}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}In-Line Math}{20}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Displayed Formulae}{20}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Numbered Equations}{21}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Equation Arrays}{21}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Math Fonts}{22}{subsection.3.6.5}
+\contentsline {section}{\numberline {3.7}Appendices}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}Bibliography}{22}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}``By-Hand'' Method}{22}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Using BibTeX}{23}{subsection.3.8.2}
+\contentsline {section}{\numberline {3.9}Glossary}{24}{section.3.9}
+\contentsline {section}{\numberline {3.10}Index}{24}{section.3.10}
+\contentsline {subsection}{\numberline {3.10.1}``By-Hand'' Method}{25}{subsection.3.10.1}
+\contentsline {subsection}{\numberline {3.10.2}Using MakeIndex}{25}{subsection.3.10.2}
+\contentsline {chapter}{\numberline {4}Processing Your \LaTeX \ Source Files Under Unix}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Running \textbf {latex}}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}Syntax Checking}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Spell Checking}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Previewing the Typeset Document}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}Printing}{27}{section.4.5}
+\contentsline {section}{\numberline {4.6}Creating Portable Document Format (PDF)}{28}{section.4.6}
+\contentsline {chapter}{\numberline {A}Sources of Information and Help}{29}{appendix.A}
+\contentsline {chapter}{\numberline {B}Glossary of Terms}{30}{appendix.B}
