@@ -32,7 +32,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \newcommand{\nameofprogram}{Chemistry}
 \newcommand{\academicunit}{Ottawa-Carleton Chemistry Institute}
 \newcommand{\graduationyear}{2014}
-\newcommand{\supervisors}{Professosrs Darrin Richeson \& Tommy Woo}
+\newcommand{\supervisors}{Professors Darrin Richeson \& Tom Woo}
 
 \newcommand{\abstractfile}{abstract.tex}
 \newcommand{\acknowledgementfile}{acknowledgement.tex}
@@ -89,8 +89,12 @@ oneside,  % final version of thesis has to be submitted single-sided
 	% ... if you want to include encapsulated postscript figures
 \usepackage{makeidx} % ... if you want an index
 \usepackage{amsmath} % ... if you need lots of math symbols
-\usepackage[dvips=true,bookmarks=true]{hyperref} % ... only needed for PDF generation
+\usepackage[dvips=true,bookmarks=true,linktocpage]{hyperref} % ... only needed for PDF generation
 \usepackage{setspace}
+\usepackage{fixltx2e}
+\usepackage[backend=bibtex,style=chem-acs,biblabel=dot]{biblatex}
+\addbibresource{bibliography/thesis}
+\usepackage[labelfont=bf,labelsep=space]{caption}
 
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
@@ -143,14 +147,15 @@ oneside,  % final version of thesis has to be submitted single-sided
 \singlespacing
 % Bibliography 
 % If done using the BibTeX program, use
-\bibliographystyle{plain} % sorted alphabetically, labeled with numbers
-\bibliography{bibliography/thesis} % names file keylatex.bib as my bibliography file 
+%\bibliographystyle{style} % sorted alphabetically, labeled with numbers
+%\bibliography{bibliography/thesis} % names file keylatex.bib as my bibliography file 
 % OR, do it "by hand" inside a "thebibliography" enivironment
+\printbibliography
 
 % Index 
 % Put a \makeindex command in the Preamble if you use MakeIndex program
 % and put 
-\printindex % here
+% \printindex % here
 % OR, do it "by hand" inside \begin{theindex} ... \end{theindex}
 %----------------------------------------------------------------------
 \end{document}
