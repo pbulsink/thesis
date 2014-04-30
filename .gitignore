@@ -26,3 +26,9 @@
 *.bak
 
 
+
+*.xml
+
+proper/thesis-blx.bib
+
+proper/bibliography/turbomole_refs.docx
