@@ -87,14 +87,18 @@ oneside,  % final version of thesis has to be submitted single-sided
 % Standard LaTeX2e packages I am using (as seen in "The LaTeX Companion"):
 \usepackage[dvips]{graphicx} 
 	% ... if you want to include encapsulated postscript figures
-\usepackage{makeidx} % ... if you want an index
-\usepackage{amsmath} % ... if you need lots of math symbols
+%\usepackage{makeidx} % ... if you want an index
+%\usepackage{amsmath} % ... if you need lots of math symbols
 \usepackage[dvips=true,bookmarks=true,linktocpage]{hyperref} % ... only needed for PDF generation
 \usepackage{setspace}
 \usepackage{fixltx2e}
 \usepackage[backend=bibtex,style=chem-acs,biblabel=dot]{biblatex}
 \addbibresource{bibliography/thesis}
 \usepackage[labelfont=bf,labelsep=space]{caption}
+\usepackage{chemscheme}
+%\usepackage[varioref=false]{chemstyle}
+\usepackage[version=3]{mhchem}
+
 
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
