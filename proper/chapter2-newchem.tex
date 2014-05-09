@@ -7,41 +7,89 @@
 As mentioned previously in the thesis introduction, \ce{Re^I} compounds have been typically bidentate (\ce{$\kappa$^2}) compounds, even when using a potentially terdentate (\ce{$\kappa$^3}) ligand such as bis(imino)pyridine or terpyridine (refer to \autoref{fig.terdentateligands}). The chemistry of this rhenium $\alpha$-imino complex has been extensively invesigated, with over 1700 references appearing in a structure search for that metal-ligand motif. The extraction of an additional carbonyl and the chelation of the pendant arm of the ligand was attempted to extend the pi system of the ligand and its interaction with the metal centre. This was first demonstrated by prior work in our group for the bis(imino)pyridine ligand\autocite{jurca2013}. 
 
 %======================================================================
-\section{Synthesis of Bidentate and Terdentate}
+\section{Synthesis of Bidentate and Terdentate \texorpdfstring{\ce{Re^I}}{Rhenium (I)} Complexes}
 %======================================================================
 
-Similar to the prior work, synthesis began with the production of bidentate \ce{$\kappa$2(terpy)Re(CO)3X} (X = Cl, Br) by coordination of 2,2':6',2''-terpyridine (Sigma) with a \ce{Re(CO)5X} (Strem) starting material in dry toluene at reflux for 4 hours. A bright yellow powder precipitated from solution and was collected by filtration, washed with cold hexanes, and dried \textit{in vacuo} to a good yield\footnote{Experimental details for all compounds can be seen in \nameref{chap:appA}}. These bidentate compounds were used without further purification to produce \ce{$\kappa$3(terpy)Re(CO)2X} (X = Cl, Br) via thermolysis. 
+Similar to the prior work, synthesis began with the production of the bidentate complex \ce{$\kappa$^2(terpy)Re(CO)3X} (X = Cl, Br) by coordination of 2,2':6',2''-terpyridine (Sigma) with a \ce{Re(CO)5X} (Strem) starting material in dry toluene at reflux for 4 hours, as shown in \autoref{scheme.bidentate}. A bright yellow powder precipitated from solution and was collected by filtration, washed with cold hexanes, and dried \textit{in vacuo} to a good yield of \textbf{1} and \textbf{2} respectively.\footnote{Experimental details for all compounds can be seen in \autoref{chap.exp} \nameref{chap.exp}} These bidentate compounds were characterized fully and used without further purification to produce \ce{$\kappa$^3(terpy)Re(CO)2X} (X = Cl, Br) via thermolysis, as well as for anion exchange reactions. 
 
-%======================================================================
-\section{Anion Exchange}
-%======================================================================
+\missingfigure{bidentate scheme}
+\begin{scheme}[!htbp]
+ \begin{center}
+  \includegraphics[clip=true]{images/insertgraphic.eps}
+ \end{center}
+\caption[Synthesis of \textbf{1} and \textbf{2}]{Synthesis of \textbf{1} and \textbf{2}}
+\label{scheme.bidentate}
+\end{scheme} 
 
+Thermolysis was completed via a method first described by Buckingham with an osmium complex\autocite{buckingham1964}.\todo{Read Reference buckingham1964} In this method, a ceramic sample boat was placed in a tube furnace at elevated temperature, under a flowing atmosphere of \ce{N2}. After some time, the sample is removed and collected at nearly quantitative yield. Determination of the appropriate thermolysis temperature was performed by \gls{ac.tga} of the sample. A 6-8 \% mass loss (dependant on sample) indicated the departure of one carbonyl group from the complex. Results of \gls{ac.tga} on \textbf{1} and \textbf{2} is shown in \autoref{fig.tga}. For \textbf{1}, thermolysis was performed at 240$^\circ$C, and for \textbf{2} thermolysis was performed at 260$^\circ$C\todo{check that value}, yielding \textbf{3} and \textbf{4} respectively, at quantitative yields.
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[clip=true, width=140mm]{images/tga.eps}
+ \end{center}
+\caption[Results of \glsentrytext{ac.tga} analysis on \textbf{1} and \textbf{2}]{Results of \glsentrytext{ac.tga} analysis on \textbf{1} and \textbf{2}}
+\label{fig.tga}
+\end{figure} 
+\todo{Further discuss TGA \& terdentate rxn to build a space to put in scheme2}
+\missingfigure{terdentate scheme2}
+
+Further reactions were carried out on the above products to yield triflate and cyano complexes of bidentate and terdentate geometries. These anion exchange reactions were performed by the addition of the silver salt to \textbf{1} or \textbf{3}, to precipitate \ce{AgCl}, leaving \ce{$\kappa$^2(terpy)Re(CO)3CN} (\textbf{5}), \ce{$\kappa$^3(terpy)Re(CO)2CN} (\textbf{6}), \ce{$\kappa$^2(terpy)Re(CO)3OTf} (\textbf{7a}) and \ce{$\kappa$^3(terpy)Re(CO)2OTf} (\textbf{8a}). Resulting in only moderate yields, \textbf{7b} and \textbf{8b} were synthesized by the direct addition of neat triflic acid (\ce{CF3SO3H}) to \textbf{1} and \textbf{2} respectively. \ce{HCl} was released, the solutions were quenched by addition of aqueous \ce{NaCO3}, and product was collected, again at moderate yield. 
+
+\missingfigure{anion exchange reaction schemes}
 
 %======================================================================
 \section{Characterization}
 %======================================================================
 
+Characterization was performed on each of the products synthesized as discussed above. \Gls{ac.nmr} analysis, x-ray crystallography, as well as UV-Vis and IR spectroscopy was performed. Computational \gls{ac.dft} methods were used to solve the geometries, and \gls{ac.tddft} was performed to predict UV-Vis spectra and identify electronic transitions. 
+
 %----------------------------------------------------------------------
 \subsection{NMR Analysis}
 %----------------------------------------------------------------------
+
+Proton \gls{ac.nmr} was performed on each of the samples. Each sample was dissolved completely in deuteroacetonitrile (\ce{CD3CN}) and analysis was performed on a Bruker AVANCE 400 MHz spectrometer. Data was processed from the FID signal via the TopSpin program, and spectra were analyzed using ACD NMR Processor v12.0. 
+
+The characteristic feature in the \gls{ac.nmr} spectra after the transformation from bidentate to terdentate (e.g. sample \textbf{1} to \textbf{2}) is the simplification of the signals in the aromatic region (between 7 and 9 ppm). This simplification is due to the increased symmetrization of the ligand, while the \ce{$\kappa$^2} bidentate ligand has a freely rotating pendant group, the \ce{$\kappa$^3} terdentate ligand is in a more rigidly fixed geometry. Prior work in literature\todo[color=red]{Get paper citation} and in our group\todo[color=red]{Titel's Thesis citation} shows the temperature dependence of the rate of rotation of this pendant arm for various ligand species. 
+
+Detailed peak analysis comparing bidentate samples \textbf{1}, \textbf{3}, \textbf{5}, and \textbf{7} or terdentate \textbf{2}, \textbf{4}, \textbf{6}, and \textbf{8} show little difference between samples. This is due to the distance between the anion and any protons on the ligand. While anions with different $\sigma$ donor strength marginally impact the metal-ligand interactions, these have only small effect on the location of peaks, shifting between samples by typically less than 0.1 ppm. As is shown in \autoref{fig.bid3nmr}, the characteristic shape of each spectra remains constant, only exact peak locations and some peak order varies with anion choice. 
+
+\missingfigure{S6 from paper, nmr of 2,3,4}
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[clip=true, width=140mm]{images/insertgraphic.eps}
+ \end{center}
+\caption[The aromatic region of the \texorpdfstring{\ce{^1H}}{1H}\glsentrytext{ac.nmr} spectra of 3 bidentate compounds]{The aromatic region of the \texorpdfstring{\ce{^1H}}{1H}\glsentrytext{ac.nmr} spectra for compounds \textbf{•} (red), \textbf{•} (green), and \textbf{•}(blue)}
+\label{fig.bid3nmr}
+\end{figure} 
+\todo{check compounds \& spectra}
+
 
 %----------------------------------------------------------------------
 \subsection{X-Ray Crystallography}
 %----------------------------------------------------------------------
 
+
+
 %----------------------------------------------------------------------
 \subsection{Spectroscopy}
 %----------------------------------------------------------------------
+
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsubsection{Infrared Spectroscopy}
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsubsection{UV-Vis Spectroscopy}
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+
 %----------------------------------------------------------------------
 \subsection{Conclusions}
 %----------------------------------------------------------------------
+
 
