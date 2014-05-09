@@ -83,13 +83,14 @@ oneside,  % final version of thesis has to be submitted single-sided
 %  \item[where $E$] least squares error term;
 %  \item[$w$] weighting factor associated with each measured variable.
 % \end{where}
+\renewcommand{\thefootnote}{\roman{footnote}}
 %----------------------------------------------------------------------
 % Standard LaTeX2e packages I am using (as seen in "The LaTeX Companion"):
-\usepackage[dvips]{graphicx} 
+\usepackage[]{graphicx} 
 	% ... if you want to include encapsulated postscript figures
 %\usepackage{makeidx} % ... if you want an index
 %\usepackage{amsmath} % ... if you need lots of math symbols
-\usepackage[dvips=true,bookmarks=true,linktocpage]{hyperref} % ... only needed for PDF generation
+\usepackage[bookmarks=true,linktocpage]{hyperref} % ... only needed for PDF generation
 \usepackage{setspace}
 \usepackage{fixltx2e}
 \usepackage[backend=bibtex,style=chem-acs,biblabel=dot]{biblatex}
@@ -99,6 +100,15 @@ oneside,  % final version of thesis has to be submitted single-sided
 %\usepackage[varioref=false]{chemstyle}
 \usepackage[version=3]{mhchem}
 
+\usepackage[nonumberlist, toc]{glossaries}
+\renewcommand\glossaryname{Glossary of Terms}
+\makeglossaries
+
+\input{glossary}
+
+\usepackage[textwidth=2.8cm]{todonotes}
+\setlength{\marginparwidth}{2.8cm}
+\reversemarginpar
 
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
@@ -144,19 +154,18 @@ oneside,  % final version of thesis has to be submitted single-sided
 %\include{useful_pkgs} %"Some Useful \LaTeX2e Packages"
 %\include{appendix1-help} %"Sources of Information and Help"
 \include{appendix1-exp}
-
-% Glossary
-% You could use a \begin{description} ... \end{description} for this
-%\include{glossary}
-
 \singlespacing
+\include{appendix2-glos}
+
+
+%glossary
 % Bibliography 
 % If done using the BibTeX program, use
 %\bibliographystyle{style} % sorted alphabetically, labeled with numbers
 %\bibliography{bibliography/thesis} % names file keylatex.bib as my bibliography file 
 % OR, do it "by hand" inside a "thebibliography" enivironment
 \printbibliography
-
+\listoftodos
 % Index 
 % Put a \makeindex command in the Preamble if you use MakeIndex program
 % and put 

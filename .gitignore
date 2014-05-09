@@ -32,3 +32,16 @@
 proper/thesis-blx.bib
 
 proper/bibliography/turbomole_refs.docx
+
+*.glg
+
+*.glo
+
+*.gls
+
+*.ist
+
+*.tdo
+
+*-converted-to.pdf
+

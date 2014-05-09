@@ -1,11 +1,14 @@
 $buildthesis
 echo “Building Thesis”
-latex thesis
+pdflatex thesis
 bibtex thesis
 makeindex thesis
-latex thesis
-latex thesis
+makeglossaries thesis
+pdflatex thesis
+pdflatex thesis
 echo “Thesis Built”
-dvipdfm thesis.dvi
+#dvipdfm thesis.dvi
 echo “PDF Saved”
+open thesis.pdf
 exit
+
