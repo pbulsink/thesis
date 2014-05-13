@@ -1,13 +1,17 @@
 %======================================================================
-\chapter{Mechanism of \texorpdfstring{CO\textsubscript{2}}{CO2} Reduction}\label{chap.mech}
-\markright{Computational Study of the Mechanism of \texorpdfstring{CO\textsubscript{2}}{CO2} Reduction}
+\chapter{Mechanism of \texorpdfstring{\ce{CO2}}{CO2} Reduction}\label{chap.mech}
+\markright{Computational Study of the Mechanism of \texorpdfstring{\ce{CO2}}{CO2} Reduction}
+%======================================================================
+
+%======================================================================
+\section{Introduction}
 %======================================================================
 
 %======================================================================
 \section{Literature Mechanisms}
 %======================================================================
 
-Literature has proposed three general mechanistic pathways for the photoreduction of \ce{CO2}. In general, as seen in \autoref{fig.threepath}, these pathways result in the formation of \ce{CO} and \ce{H2O}, formate (\ce{HCO2-}), or carbonate (\ce{COOH-}). The formation of \todo{carbonate or formate?} proceeds via the formation of a catalyst dimer over a molecule of \ce{CO2}, with the insertion of a second molecule of \ce{CO2} to produce the \todo{carbonate or formate} and a molecule of \ce{CO}. The formation of \ce{CO} without carbonate or formate byproducts occurs via the insertion of \ce{CO2} into a metal-hydride bond, followed by a proton addition and the release of a molecule of \ce{H2O} prior
+Prior work in the literature has proposed three general mechanistic pathways for the photoreduction of \ce{CO2}. In general, as seen in \autoref{fig.threepath}, these pathways result in the formation of \ce{CO} and \ce{H2O}, formate (\ce{HCO2-}), or carbonate (\ce{CO3H-}) anions. The formation of carbonate proceeds via the formation of a catalyst dimer over a molecule of \ce{CO2}, with the insertion of a second molecule of \ce{CO2} to produce the carbonate and a molecule of \ce{CO}. Formation of formate occurs via insertion of \ce{CO2} to a rhenium hydride bond. The formation of \ce{CO} without carbonate or formate byproducts occurs via the coordination of \ce{CO2} to an open site on the metal, followed by a double proton addition and the release of a molecule of \ce{H2O} prior to the loss of one of the four carbonyl groups to open up the axial site for halide re-coordination.
 
 \missingfigure{Three mechanistic pathway quick}
 \begin{figure}[!htbp]
@@ -19,13 +23,33 @@ Literature has proposed three general mechanistic pathways for the photoreductio
 \end{figure} 
 \todo{Make mechanism (or get morris?)}
 
-%----------------------------------------------------------------------
-\subsection{Subsection}
-%----------------------------------------------------------------------
+Many of the intermediates have been synthesized in various studies \todo{Ref. Sullivan and Gilbert}, indicating their reasonable stability. While individual portions of the mechanism have been studied computationally in the past\todo{refs}, no over-arching study has compared methods relative to each other. Furthermore, while the formation of \ce{CO} with \ce{H2O} is the most anticipated pathway (due to the lack of formation of carbonate or formate in most studies), no literature pathway exists to explain the addition of \ce{CO2} to the open site of the radical catalytic species without a three body reaction step (catalyst, \ce{CO2} and \ce{H+} together) or without formate reorganization. Furthermore, no mechanism proposed thus far explains the \ce{^{12}CO} to \ce{^{13}CO} isotopic exchange demonstrated by Lehn's group in 1986. 
 
-%----------------------------------------------------------------------
-\subsection{Subsection}
-%----------------------------------------------------------------------
+%======================================================================
+\section{Consequences From \texorpdfstring{\ce{$\kappa$^2}}{Bidentate} Terpyridine Complex Inactivity}
+%======================================================================
+
+The lack of reactivity of the \ce{$\kappa$^2(terpy)Re(CO)3X} motif of complexes contrasting to the activity of the originally published \ce{$\kappa$^2(bipy)Re(CO)3X} indicates some influence of the ligand on the mechanism. While the terdentate complex can be rationalized to be inactive due to its short-lived excited state (as seen in the lack of fluorescence)\todo{fluorescence tests on 1,2}, this explanation does not suffice for the fluorescing bidentate complex. Other substituted bipyridine ligands are known to be active for photocatalytic reduction\todo{ref lehn88?}, identifying the most likely conflicting feature of the terpyridine ligand to be the pendant arm, and its availability for chelation to the metal centre. While in the radical eximer form, the chelation site is sterically blocked by one of the three carbonyl groups. However, reorganization of the substituent carbonyls from a \textit{facial} orientation to a \textit{meridional} could allow for the free pyridine to form the metal-ligand bond, resulting in compound (X)\todo{Set up a detailed naming scheme that will work for the entire chapter, likely having to start with M\#\# or similar motif.} \todo{computationally back it up}. 
+
+Due to the ease of migration of the carbonyl groups, it is proposed that the mechanism that follows pathway X\todo{pathway numbrs as well} does not occur entirely axial to the ligand, but begins with coordination of a \ce{CO2} molecule in between the \textit{facial}-\ce{CO} ligands, forcing a carbonyl to the axial position. This \ce{CO2} bound in the plane of the lignad then undergoes hydrogenation to produce a molecule of \ce{H2O}. After the departure of the water molecule, the catalyst is left as a tetracarbonyl cation. While any of the carbonyl groups could be labile, the carbonyl at the axial position is replaced by the halide to return to the starting catalyst. 
+
+%======================================================================
+\section{Comparison Between Mechanistic Pathways}
+%======================================================================
+
+The overall energies for each of the mechanistic pathways shown in \autoref{fig.threepath} are shown in \autoref{fig.threeenergies}. 
+
+\missingfigure{Three mechanistic energy comparison}
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[clip=true]{images/insertgraphic.eps}
+ \end{center}
+\caption[Reaction energies for three mechanistic pathways]{An overview of the energies of the three mechanistic pathways of photochemical \ce{CO2} reduction}
+\label{fig.threeenergies}
+\end{figure} 
+\todo{SOLVE ENERGY}
+
+
 
 %----------------------------------------------------------------------
 \subsection{Subsection}
