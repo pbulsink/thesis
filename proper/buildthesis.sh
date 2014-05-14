@@ -1,4 +1,5 @@
 $buildthesis
+STARTTIME=$(date +%s)
 echo “Building Thesis”
 pdflatex thesis
 bibtex thesis
@@ -8,7 +9,8 @@ pdflatex thesis
 pdflatex thesis
 echo “Thesis Built”
 #dvipdfm thesis.dvi
-echo “PDF Saved”
+ENDTIME=$(date +%s)
+echo “PDF Built and Saved in $(($ENDTIME - $STARTTIME)) seconds”
 open thesis.pdf
 exit
 
