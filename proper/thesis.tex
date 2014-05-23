@@ -95,7 +95,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \usepackage{fixltx2e}
 \usepackage[backend=bibtex,style=chem-acs,biblabel=dot]{biblatex}
 \addbibresource{bibliography/thesis}
-\usepackage[labelfont=bf,labelsep=space]{caption}
+\usepackage[labelfont=bf, labelsep=space, tableposition=top]{caption}
 \usepackage{chemscheme}
 %\usepackage[varioref=false]{chemstyle}
 \usepackage[version=3]{mhchem}
@@ -106,9 +106,17 @@ oneside,  % final version of thesis has to be submitted single-sided
 
 \input{glossary}
 
+\usepackage{booktabs}
 \usepackage[textwidth=2.8cm]{todonotes}
 \setlength{\marginparwidth}{2.8cm}
 \reversemarginpar
+
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
+\usepackage{pdflscape}
+\usepackage{afterpage}
 
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
