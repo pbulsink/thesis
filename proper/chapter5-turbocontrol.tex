@@ -1,0 +1,19 @@
+%======================================================================
+\chapter{TurboControl}\label{chap.turbocontrol}
+\markright{TurboControl}
+%======================================================================
+
+The analysis of the mechanism using computational methods required a significant amount of manual set-up and analysis work of computational input and output files. The calculations required 37 different molecules, intermediates, or transition states to be calculated in multiple different environments. These calculations typically require intervention or set-up of intermediate steps to be able to fully elucidate all of the required information, for example, the set-up of frequency calculations after a geometry optimization to ensure ground state or transition state geometries. 
+
+Additionally, while TurboMole contains much faster optimization code for \gls{ac.dft} calculations, the user interface for this software requires a significant learning curve and is based in a user-abrasive interactive text prompt environment. This contrasts to Gaussian 09, which is significantly more popular, partially due to the user-friendliness of the GaussView \gls{ac.gui}, despite concerns about the speed of optimization of large or complex molecules.
+
+These two factors prompted the development of a new program, TurboControl, written in Python, with the goal of combining the user friendliness of GaussView on top of the optimization efficiency of TurboMole. This program allows a user to prepare the input files in GaussView, modify them slightly in any text editor available to them, then run a batch calculation on the files. TurboControl monitors the computational jobs, resubmitting for frequency calculations when optimization is complete if requested, and using the TurboMole tools available when required to ensure ground state or first transition state geometries are discovered. TurboControl then outputs statistics files, providing the energy and first frequency vibration of each molecule in a single output file. Additional commands can instruct TurboControl to run in a solution, do single-point energy calculations, or gather more in-depth thermodynamic information from the outputs using TurboMole's tools. 
+
+TurboControl provides this hands-off management of jobs allowing the user to spend more time in data analysis, experimental work, or to be able to produce data at a significantly higher rate compared to the manual setup and monitoring of jobs. TurboControl also contains a single job initiation script entitled TurboGo to allow for the use of the input files without the overhead of the job managing.
+
+%----------------------------------------------------------------------
+\subsection{Subsection}
+%----------------------------------------------------------------------
+
+
+

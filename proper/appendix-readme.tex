@@ -1,0 +1,392 @@
+\chapter{TurboControl and TurboGo Manual}\label{chap.readme}
+\markright{TurboControl User's Manual}
+
+
+TurboControl is a series of scripts to run Turbomole jobs from Gaussian style inputs. The following is the user manual included with distributions of TurboControl 
+
+\section{Introduction}
+Gaussian software is well known for the user friendly GUI it contains
+(via GaussView). Turbomole, another computational suite, is known for
+its speed and optimizations, but has a significantly higher learning
+curve and is less beginner friendly. This software is an attempt to be
+able to use the user friendly input from Gaussian to smooth over the use
+of Turbomole.
+
+\section{System Requirements}
+
+There are two user-facing scripts available, both written to work with
+Turbomole 6.1-6.5 on clusters using Grid Engine queuing software. The
+only tests of operation are on a system with the following details:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Rocks 6.1 (Emerald Boa)/CentOS 6.3
+\item
+  Open Grid Scheduler/Grid Engine 2011.11p1
+\item
+  Python 2.7.3
+\end{itemize}
+
+Other systems, including different operating systems, different versions
+of Grid Engine or python, or on other systems, are not supported.
+
+Python dependencies include:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  pexpect 3.2\autocite{pexpect}
+\item
+  openbabel\autocite{openbabel, oboyle2011} (optional)
+\end{itemize}
+
+Prior to running TurboGo or TurboControl, a valid installation of
+Turbomole must be available. On systems where computational modules must
+be loaded, Turbomole must have been loaded to the environment.
+Additionally, running the Turbomole environment configuration is
+recommended but not required prior to launching TurboGo or TurboControl:
+
+\begin{center}
+\begin{verbatim}
+$ source $TURBODIR/Config_turbo_env
+\end{verbatim}
+\end{center}
+
+\section{TurboGo}
+
+TurboGo is a script fun on an input file. It generates the inputs
+required for Turbomole jobs, and submits the job to the GridEngine queue
+before quitting. TurboGo is run with the following syntax:
+
+\begin{center}
+\begin{verbatim}
+$ turbogo [-h] [-v] [-q] file
+\end{verbatim}
+\end{center}
+
+positional arguments:
+
+\begin{Verbatim}[baselinestretch=0.75]
+file                  Read input from gaussian-type input FILE.
+\end{Verbatim}
+
+More info on the input files is available in section 4.0, below.
+
+optional arguments:
+
+\begin{itemize}
+\item \texttt{-h, --help            }Show this help message and exit
+\item \texttt{-v, --verbose         }Run more verbose (show debugging info)
+\item \texttt{-q, --quiet           }Run less verbose (show only warnings)
+\end{itemize}
+
+TurboGo saves a log file (turbogo.log) in the directory in which it is
+run. A second logfile (define.log) will remain if the setup crashes or
+is terminated at some points, or if the script is run verbose.
+
+TurboGo writes the final coordinates to final\_geometry.xyz. If
+openbabel is installed, it will also write finalgeom.mol. The entire
+optimization is written to optimization.xyz for viewing with a molecular
+viewer, such as vmd.
+
+\section{TurboControl}
+
+TurboControl is a management script called from a parent directory
+containing sub directories of input files. Each input file must be in
+its own directory. The input file format must be the same as the input
+format for TurboGo (listed above), with the extension `.in', `.inp',
+`.input', `.com', or `.gjf'. TurboControl reads the inputs and submits
+the jobs to the computational cluster queue. It then monitors running
+jobs to determine when the script has finished. If the job is an
+Opt-Freq, it prepares the frequency analysis and resubmits to the queue.
+TurboControl analyzes completed Opt-Freq jobs for true optimization, and
+attempts to re-run jobs with modified geometries when Transition States
+are found. TurboControl will not get stuck on the same transition state,
+but will return a `stuck' job. TurboControl is run with the following
+syntax:
+
+\begin{center}
+\begin{verbatim}
+$ turbocontrol [-h] [-v/-q] [-s]
+\end{verbatim}
+\end{center}
+
+Optional arguments:
+
+\begin{itemize}
+\item \texttt{-h, --help            }Show this help message and exit
+\item \texttt{-v, --verbose         }Run more verbose (show debugging info)
+\item \texttt{-q, --quiet           }Run less verbose (show only warnings)
+\item \texttt{-s, --solvent         }List available solvents for COSMO and quit
+\end{itemize}
+
+TurboControl outputs information every 3 hours on the status of the
+jobs. It writes a logfile (\texttt{turbocontrol.log}) and may or may not leave
+other log files in each directory (depending on verbosity level). Ends
+when the last job finishes or crashes. Requires 1 node or can be run on
+headnode (minimal resource consumption especially after initial job
+preparation and submission.)
+
+TurboControl assists with analysis by outputting a \texttt{stats.txt} file as jobs
+complete. This file contains file details, optimization and frequency
+timing details, energy, and the first frequency. Additional information
+can be requested by including the \texttt{freeh} keyword (see below).
+
+\section{Input File Format}
+
+The input file format is similar to that well known by Gaussian users. A
+series of keywords, one per line and indicated by a `\%', is followed by
+the `route card' (specific job information). Charge and spin is
+indicated, then the molecule is shown in Cartesian format. This is
+followed by optional modifications to the Turbomole Control file. Note
+the location of blank lines in the example (Section 5.7).
+
+\subsection{Keywords}
+
+Keywords are as follows:
+
+\begin{itemize}
+\item \texttt{\%nproc} - number of processors to use for the calculation job.
+  \begin{itemize}
+    \item Synonym: \texttt{\%nprocessors}
+  \end{itemize}
+\item \texttt{\%arch} - parallelization architecture to use for the job.
+  \begin{itemize}
+    \item Synonyms: \texttt{\%architecture}, \texttt{\%para\_arch}
+   \end {itemize}
+\item \texttt{\%maxcycles} - number of optimization iterations before failing.
+\item \texttt{\%autocontrolmod} - DEFAULT - modify the \texttt{control} file to include optimizations to speed up the job.
+\item \texttt{\%nocontrolmod} - do not modify \texttt{control} file as above.
+\item \texttt{\%rt} - specify max expected runtime (for any part of job)in hours. Allows backfilling in gridengine queue to speed up job submission. For example, for a 1 hour opt and 4 hour freq, submit at least a \texttt{rt} of 4
+\item \texttt{\%cosmo} - use turbomole's COSMO solvation model with the specificed solvent or \texttt{None} to use the idealized solvent (epsilon = infinity). List of available solvents can be shown by running \texttt{turbocontrol -s}
+\end{itemize}
+
+Gaussian args, including \texttt{\%nosave}, \texttt{\%rwf={[}file{]}}, \texttt{\%chk={[}file{]}}, and \texttt{\%mem={[}memory{]}} are silently ignored.
+
+\subsection{Route Card Options}
+
+Route cards take the form of the following:
+
+\texttt{\# {[}jobtype(s){]} {[}joboption(s){]}}
+
+Job types available:
+
+\begin{itemize}
+\item \texttt{opt} - Perform a geometry optimization
+\item \texttt{freq} - Perform a frequency analysis. Specify method via numforce or aoforce. default = numforce
+\item \texttt{sp} - Perform a single point energy calculation.
+  \begin{itemize}
+    \item Cannot be combined with Opt or Freq
+  \end{itemize}
+\item \texttt{ts} - Perform a transition state search to find 1 imaginary vibration. 
+  \begin{itemize}
+    \item Cannot be combined with Opt or Freq
+  \end{itemize}
+\item \texttt{prep} - Prepare the job but do not submit to queue.
+  \begin{itemize}
+    \item Cannot be combined with Opt or Freq
+  \end{itemize}
+\end{itemize}
+
+Job options available:
+
+\begin{itemize}
+\item \texttt{ri} - Use Turbomole's ri approximation
+\item \texttt{marij} - Use Turbomole's marij approximation 
+  \begin{itemize}
+    \item Requires \texttt{ri}
+  \end{itemize}
+\item \texttt{disp} - Use Turbomole's implementation of Grimme's dispersion, version 3
+\item \texttt{aoforce} - Use aoforce for frequency jobs
+\item \texttt{numforce} - Use numforce for frequency jobs
+\item \texttt{freeh} - Use Turbomole's \texttt{freeh} thermodynamics data script to extract thermodynamic information after frequency analysis
+\end{itemize}
+
+\subsection{Title}
+
+Following the Route cards, a blank line is added, then a line containing
+the title of the calculation. This can include any characters, spaces,
+etc., remaining on only one line. This is followed by a blank line.
+
+\subsection{Charge and Spin}
+
+Charge and spin are listed as two numbers separated by a space: charge spin (eg:0 1)
+
+\subsection{Geometry}
+
+Geometry in xyz coordinate format: Element xcoord ycoord zcoord. Z-matrix geometry is not supported by TurboControl or TurboGo.
+
+\subsection{Additional control File Modifications}
+
+Additional lines to be added or removed from control. Lines
+automatically added are, as required,:
+
+\begin{Verbatim}[baselinestretch=0.75]
+$ricore 0
+$paroptions ga_memperproc 900000000000000 900000000000
+$parallel_parameters  maxtask=10000
+$ricore_slave 1
+$maxcor 2048
+\end{Verbatim}
+
+Additional lines may be added, or lines removed, by placing them after
+the geometry with a \texttt{\$} (for addition) or \texttt{-\$} (for removal).
+
+\subsection{Example Input File}
+
+An example input file for benzene in dmf:
+
+\begin{Verbatim}[baselinestretch=0.75]
+%nproc=4
+%arch=GA
+%maxcycles=250
+%rt=6
+%cosmo=dmf
+# opt freq b3-lyp/def2-TZVP ri marij numforce
+
+Benzene Optimization & Frequency
+
+0 1
+C  0.000  1.396  0.000
+C  1.209  0.698  0.000
+C  1.209 -0.698  0.000
+C  0.000 -1.396  0.000
+C -1.209 -0.698  0.000
+C -1.209  0.698  0.000
+H  0.000  2.479  0.000
+H  2.147  1.240  0.000
+H  2.147 -1.240  0.000
+H  0.000 -2.479  0.000
+H -2.147 -1.240  0.000
+H -2.147  1.240  0.000
+
+$disp
+-$paraoptions
+
+\end{Verbatim}
+
+\section{Known Issues}
+
+
+Current Known issues are:
+\begin{itemize}
+ \item Seems to have trouble on single molecule jobs.
+\end{itemize}
+
+Won't Fix includes:
+\begin{itemize}
+ \item Software doesn't avoid lone proton jobs (H+), but crashes them out
+\end{itemize}
+
+\section{ToDo}
+
+High Priority: 
+\begin{itemize}
+ \item none
+\end{itemize}
+
+Medium Priority:
+\begin{itemize}
+ \item none
+\end{itemize}
+
+Low Priority: 
+\begin{itemize}
+ \item Presentation of badly formatted input files to allow for modification and resubmission to reduce loss by typos
+ \item Expand inclusion of more basis sets, mix basis sets for different atoms.
+\end{itemize}
+
+
+\section{Code Details}
+
+Coverage percentages of code unittests are listed in \autoref{tab.codetest}. Results are low for def\_op, screwer\_op, cosmo\_op, freeh\_op, turbocontrol, and turbogo because they contain many lines of interacting with GridEngine or TurboMole. Testing is performed via monitoring the status of the scripts as they run in real conditions.
+
+The code style is graded by PyLint and results are shown in \autoref{tab.pylint}. PyLint describes coding style, adherence to guidelines, and readability. It does not describe code efficiency or usefulness.
+
+\begin{table}[!H]
+  \centering
+    \caption{Test Coverage of scripts in Turbocontrol}
+    \begin{tabular}{crrrr}
+    \toprule
+    Name  & Statements & Missing & Excluded & Coverage \\
+    \midrule
+    cosmo\_op & 106   & 70    & 1     & 34\% \\
+    cosmo\_op\_test & 17    & 1     & 0     & 94\% \\
+    def\_op & 302   & 226   & 1     & 25\% \\
+    def\_op\_test & 20    & 1     & 0     & 95\% \\
+    freeh\_op & 162   & 55    & 1     & 66\% \\
+    freeh\_op\_test & 27    & 1     & 0     & 96\% \\
+    screwer\_op & 71    & 25    & 1     & 65\% \\
+    screwer\_op\_test & 11    & 1     & 0     & 91\% \\
+    test\_all & 18    & 0     & 0     & 100\% \\
+    turbocontrol & 537   & 319   & 0     & 41\% \\
+    turbocontrol\_test & 245   & 24    & 0     & 90\% \\
+    turbogo & 343   & 132   & 0     & 62\% \\
+    turbogo\_helpers & 383   & 52    & 0     & 86\% \\
+    turbogo\_helpers\_test & 274   & 2     & 0     & 99\% \\
+    turbogo\_test & 98    & 1     & 0     & 99\% \\
+          & 2614  & 910   & 4     & 65\% \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab.codetest}
+\end{table}%                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+\begin{table}[!h]
+  \centering
+  \caption{PyLint Scores for Turbocontrol Code}
+    \begin{tabular}{cr}
+    \toprule
+    File  & Score /10 \\
+    \midrule
+    test\_all.py & 2.22 \\
+    turbogo.py & 8.80 \\
+    turbogo\_test.py & 6.97 \\
+    turbocontrol.py & 8.55 \\
+    turbocontrol\_test.py & 7.18 \\
+    turbogo\_helpers.py & 8.81 \\
+    turbogo\_helpers\_test.py & 7.45 \\
+    def\_op.py & 8.18 \\
+    def\_op\_test.py & 5.71 \\
+    screwer\_op.py & 7.36 \\
+    screwer\_op\_test.py & 6.67 \\
+    freeh\_op.py & 8.71 \\
+    freeh\_op\_test.py & 6.79 \\
+    cosmo\_op.py & 8.22 \\
+    cosmo\_op\_test.py & 6.67 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab.pylint}
+\end{table}%
+
+\section{License}
+
+All third party software is a registered trademark of their respective
+creators. Use of third party software via this software is limited by
+the conditions as laid out by the respective companies. License to use
+this software in no way acts as a license to use any other separate
+referenced software.
+
+The MIT License (MIT)
+
+Copyright \copyright~2014 Philip Bulsink
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+``Software''), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

@@ -38,7 +38,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \newcommand{\acknowledgementfile}{acknowledgement.tex}
 %----------------------------------------------------------------------
 % Reprocess only those files which have changed recently:
-% \includeonly{intro,creating,commands} 
+%\includeonly{intro,creating,commands} 
 %----------------------------------------------------------------------
 % Create a listing in the log of all files needed to process this document
 \listfiles
@@ -117,7 +117,15 @@ oneside,  % final version of thesis has to be submitted single-sided
 
 \usepackage{pdflscape}
 \usepackage{afterpage}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage[para]{threeparttable}
 
+
+\usepackage[section]{placeins}
+
+
+\usepackage{fancyvrb}
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
 %\usepackage{} % ... note that old .sty files can be included here
@@ -148,7 +156,8 @@ oneside,  % final version of thesis has to be submitted single-sided
 \include{chapter2-newchem} %"new geometry chemistry"
 \include{chapter3-co2} %"CO2 Chemistry" 
 \include{chapter4-mechanism} %"Mechanism Study"
-\include{chapter5-conclusion} %"Conclusion"
+\include{chapter5-turbocontrol} %"Turbocontrol"
+\include{chapter6-conclusion} %"Conclusion"
 %----------------------------------------------------------------------
 % END MATERIAL
 %----------------------------------------------------------------------
@@ -157,12 +166,14 @@ oneside,  % final version of thesis has to be submitted single-sided
 %###################################
 % Appendices
 \appendix
+\captionsetup{list=no}
 % Designate with \appendix declaration which just changes numbering style 
 % from here on
 %\include{useful_pkgs} %"Some Useful \LaTeX2e Packages"
 %\include{appendix1-help} %"Sources of Information and Help"
 \include{appendix-exp}
 \include{appendix-mos}
+\include{appendix-readme}
 \singlespacing
 \include{appendix-glos}
 
