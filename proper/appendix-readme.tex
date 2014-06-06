@@ -71,7 +71,7 @@ positional arguments:
 file                  Read input from gaussian-type input FILE.
 \end{Verbatim}
 
-More info on the input files is available in section 4.0, below.
+More info on the input files is available below.
 
 optional arguments:
 
@@ -266,37 +266,6 @@ $disp
 
 \end{Verbatim}
 
-\section{Known Issues}
-
-
-Current Known issues are:
-\begin{itemize}
- \item Seems to have trouble on single molecule jobs.
-\end{itemize}
-
-Won't Fix includes:
-\begin{itemize}
- \item Software doesn't avoid lone proton jobs (H+), but crashes them out
-\end{itemize}
-
-\section{ToDo}
-
-High Priority: 
-\begin{itemize}
- \item none
-\end{itemize}
-
-Medium Priority:
-\begin{itemize}
- \item none
-\end{itemize}
-
-Low Priority: 
-\begin{itemize}
- \item Presentation of badly formatted input files to allow for modification and resubmission to reduce loss by typos
- \item Expand inclusion of more basis sets, mix basis sets for different atoms.
-\end{itemize}
-
 
 \section{Code Details}
 
@@ -358,6 +327,14 @@ The code style is graded by PyLint and results are shown in \autoref{tab.pylint}
     \end{tabular}%
   \label{tab.pylint}
 \end{table}%
+
+\section{Citing TurboControl}
+
+TurboControl, Turbogo, or any other parts of this code may be cited as:
+Bulsink, Philip. TurboControl, v. 1.1.0. http://github.org/pbulsink/turbocontrol (accessed June 2014)
+Change the version number to match the version that you used, and change the accessed date to when you installed or downloaded TurboControl. 
+
+\todo[inline]{check formatting}
 
 \section{License}
 
