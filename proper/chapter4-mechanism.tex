@@ -10,38 +10,111 @@
 Within three years of the originally reported bipyridine rhenium I catalyst, experimental studies on the mechanism of the photocatalytic reduction of \ce{CO2} were available in the literature\autocite{hawecker1986}. Studies continue on the mechanism up to the present day\autocite{koike2002, machan2014}\todo{more}, utilizing new investigative techniques as they become available, this includes the use of \gls{ac.dft} methods to elucidate geometries of intermediates and transition states for of the multi-step cycle. Transition metal catalysis is a non-trivial problem computationally, especially when considering a metal from the lower period. These elements contain a large amount of electrons, many of which can be involved in non-covalent interactions with the ligands and catalyzed products. Solving for this complex system becomes non-trivial and computationally expensive. For this reason, no overview of the mechanism as investigated by \gls{ac.dft} methods has ever been made available in the literature. 
 
 %======================================================================
-\section{Literature Mechanisms}
+\section{Literature Mechanism Pathways}
 %======================================================================
 
-Prior work in the literature has proposed three general mechanistic pathways for the photoreduction of \ce{CO2}. In general, as seen in \autoref{fig.threepath}, these pathways result in the formation of \ce{CO} and \ce{H2O}, formate (\ce{HCO2-}), or carbonate (\ce{CO3H-}) anions. The formation of carbonate proceeds via the formation of a catalyst dimer over a molecule of \ce{CO2}, with the insertion of a second molecule of \ce{CO2} to produce the carbonate and a molecule of \ce{CO}. Formation of formate occurs via insertion of \ce{CO2} to a rhenium hydride bond. The formation of \ce{CO} without carbonate or formate by-products occurs via the coordination of \ce{CO2} to an open site on the metal, followed by a double proton addition and the release of a molecule of \ce{H2O} prior to the loss of one of the four carbonyl groups to open up the axial site for halide re-coordination. The activation of the catalyst with respect to radicalization, electron abstraction from the sacrificial reductant, and anion disassociation is well studied, the character of the \ce{CO2} adduct is less well known.
+Prior work in the literature has proposed three general mechanistic pathways for the photoreduction of \ce{CO2}. In general, as seen in \autoref{fig.threepath}, these pathways result in the formation of \ce{CO} and \ce{H2O}, formate (\ce{HCO2-}), or carbonate (\ce{CO3H-}) anions. The formation of carbonate proceeds via the formation of a catalyst dimer over a molecule of \ce{CO2}, with the insertion of a second molecule of \ce{CO2} to produce the carbonate and a molecule of \ce{CO}. Formation of formate occurs via insertion of \ce{CO2} to a rhenium hydride bond. The formation of \ce{CO} without carbonate or formate by-products occurs via the coordination of \ce{CO2} to an open site on the metal, followed by a double proton addition and the release of a molecule of \ce{H2O} prior to the loss of one of the four carbonyl groups to open up the axial site for halide re-coordination. This is essentially the \gls{ac.rwgsr}, wherein protons are made available from decomposition of the sacrificial amine instead of from \ce{H2} gas. The activation of the catalyst with respect to radicalization, electron abstraction from the sacrificial reductant, and anion disassociation is well studied, the character of the \ce{CO2} adduct is less well known. These three mechanistic pathways will be referred to as the `carbonate' mechanism, the `formate' mechanism, and the `water-gas shift' mechanism, respectively.
 
-\missingfigure{Three mechanistic pathway quick}
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
  \begin{center}
-  \includegraphics[clip=true]{images/insertgraphic.eps}
+  \includegraphics[clip=true, keepaspectratio]{images/insertgraphic.eps}
  \end{center}
 \caption[Overview of mechanistic pathways]{An overview of the mechanistic pathways of photochemical \ce{CO2} reduction}
 \label{fig.threepath}
 \end{figure} 
 \todo{Make mechanism (or get morris?)}
 
+All of the pathways require the formation of a common eximer species, namely, the radical 17\textit{e}\textsuperscript{-} species (\autoref{fig.eximer}). This occurs through the absorption of an incident photon with enough energy to promote an electron from the metal d-orbital to the ligand $\pi^\ast$ orbitals. The pseudo-oxidized, electron-deficient metal atom extracts an electron from the sacrificial amine to return to the \ce{Re^{I}} state. However, this complex is formally a radical anion, the halide is lost to return to the neutral eximer species in solution. 
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[clip=true, width=120mm, keepaspectratio]{images/eximer.eps}
+ \end{center}
+\caption{Formation of the eximer species via absorption of a photon and oxidation of the sacrificial amine.}
+\label{fig.eximer}
+\end{figure} 
+
+The decomposition of the sacrificial amine was first identified by \todo{ref}, and is summarized in \autocite{fig.decomp}. This decomposition is important because of the protons it provides to the reaction mixture, and the ease of second electron abstraction from a decomposition product. The radical cationic species (\ce{Et3N^{+.}}) undergoes a proton transfer to a second molecule of the sacrificial reductant. The transfer removes a proton from the $\alpha$ carbon, leaving it a radical species but removing the charge. This species is able to react in the catalytic cycle to provide a second electron and form the ethene-diethylamino compound.
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[clip=true, width=120mm, keepaspectratio]{images/reddecomp.eps}
+ \end{center}
+\caption{Decomposition pathway for the sacrificial amine.}
+\label{fig.decomp}
+\end{figure} 
+
+Each of the mechanistic pathways identified above in \autoref{fig.threepath} was studied, using \gls{ac.dft} methods. Structures (using 2,2'-bipyridine as the bidentate ligand, and triethylamine as the sacrificial reductant) were optimized to ground or transition states using TurboMole 6.5\autocite{turbomole, ahlrichs1989}, with the TPSS meta-GGA XC functional\autocite{tao2003}. The def2-TZVP basis set was used for all atoms\autocite{schafer1994, weigend2005}. The TurboMole program contains a number of optimizations to the original \gls{ac.dft} algorithms\autocite{haase1993, treutler1995, eichkorn1997, eichkorn1995, sierka2003, deglmann2004, weigend2002, vonarnim1998, ahlrichs2004}, decreasing the calculation time without compromising accuracy. Grimme's dispersion correction (version 3) was included in the calculations\autocite{grimme2010}. Intermediates and transition states were verified by frequency analysis\autocite{deglmann2004, deglmann2002, grimme2002}, with further verification of transition states by performing dynamic reaction coordinate calculations to determine the \glspl{ac.irc}. The effects of solvation was calculated using the Conductor-like Screening Model (COSMO) implemented in TurboMole\autocite{klamt1993}, which is a continuum solvation model implicitly surrounding the solute molecule. Code was developed to assist with managing the computational jobs (see \autoref{chap.turbocontrol}). 
+
+%---------------------------------------------------------------------
+\subsection{The `Carbonate' Pathway}
+%---------------------------------------------------------------------
+The carbonate pathway is shown in \autoref{fig.carbonate}, starting from the excimer species. In this reaction, two molecules of the excimer species combign over a molecule of \ce{CO2}, forming a stable intermediate where one catalyst molecule is bound to the central carbon atom of the gas, while the other is bound to one of the pendant oxygen atoms. A second molecule of \ce{CO2} is inserted between the oxygen-rhenium, the intermediate is a loose four membered ring with the rhenium atom, the oxygen from the first \ce{CO2} molecule, and the carbon and one oxygen atom from the new incoming molecule. This four-membered ring breaks apart to relax to a \ce{\bond{-}OC(O)OC(O)\bond{-}} linked catalyst dimer. The \ce{CO2} reduction continues via another rearrangement to form a five-membered ring transition state, resulting in the release of a \ce{CO} molecule and the formation of a bicarbonate (\ce{\bond{-}OC(O)O\bond{-}}) linker. Decomposition of this and the readdition of halide to the molecule results in the formation of the catalyst ground states\todo{make sure to label diagram and include in text}
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[clip=true, width=\textwidth]{images/insertgraphic.eps}
+ \end{center}
+\caption{The `carbonate' mechanistic pathway}
+\label{fig.carbonate}
+\end{figure} 
+
+%---------------------------------------------------------------------
+\subsection{The `Formate' Pathway}
+%---------------------------------------------------------------------
+In comparison to the catalytic dimer formed in the carbonate pathway above, the formate formation occurs via a much simpler mechanism. The addition of a proton to the open site axial to the ligand occurs via the simultaneous electron and proton transfer from a byproduct of the reduction of the amine. \ce{CO2} inserts into this metal hydride bond, resulting in a metal-oxide bond, with the formate anion. Separation of the weak metal-oxygen bond allows for the reinsertion of the halide to the cationic metal centre. 
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[clip=true, width=\textwidth]{images/insertgraphic.eps}
+ \end{center}
+\caption{The `formate' mechanistic pathway}
+\label{fig.formate}
+\end{figure} 
+
+%---------------------------------------------------------------------
+\subsection{The `Water-Gas Shift' Pathway}
+%---------------------------------------------------------------------
+The water-gas shift mechanism involves the addition of two protons from the reductant to a \ce{CO2} molecule bound to the metal centre. The first proton addition yields an acid species, this is dehydrated via the second addition of a proton and the release of one molecule of \ce{H2O}. The resulting tetracarbonyl cationic species is able then to release an axial carbonyl to return to the ground state. While any of the carbonyl groups could be labile, the carbonyl at the axial position is the one actively replaced by the halide to return to the starting catalyst\autocite{shaver1992}. 
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[clip=true, width=\textwidth, keepaspectratio]{images/watergas.eps}
+ \end{center}
+\caption{The `water-gas shift' mechanistic pathway}
+\label{fig.watergas}
+\end{figure} 
+
+%---------------------------------------------------------------------
+\subsection{Criticisms of Published Mechanisms}
+%---------------------------------------------------------------------
+
 Many of the intermediates have been synthesized in various studies \todo{Ref. Sullivan and Gilbert}, indicating their reasonable stability. While individual portions of the mechanism have been studied computationally in the past\todo{refs}, no over-arching study has compared methods relative to each other. Furthermore, while the formation of \ce{CO} with \ce{H2O} is the most anticipated pathway (due to the lack of formation of carbonate or formate in most studies), no literature pathway exists to explain the addition of \ce{CO2} to the open site of the radical catalytic species without a three body reaction step (catalyst, \ce{CO2} and \ce{H+} together) or without formate reorganization. Furthermore, no mechanism proposed thus far explains the \ce{^{12}CO} to \ce{^{13}CO} isotopic exchange demonstrated by Lehn's group in 1986\autocite{hawecker1986}. 
 
-%======================================================================
-\section{Consequences From \texorpdfstring{\ce{$\kappa$^2}}{Bidentate} Terpyridine Complex Inactivity}
-%======================================================================
+%---------------------------------------------------------------------
+\subsection{Consequences From \texorpdfstring{\ce{$\kappa$^2}}{Bidentate} Terpyridine Complex Inactivity}
+%---------------------------------------------------------------------
 
 The lack of reactivity of the \ce{$\kappa$^2(terpy)Re(CO)3X} motif of complexes contrasting to the activity of the originally published \ce{$\kappa$^2(bipy)Re(CO)3X} indicates some influence of the ligand on the mechanism. While the terdentate complex can be rationalized to be inactive due to its short-lived excited state (as seen in the lack of fluorescence)\todo{fluorescence tests on 1,2}, this explanation does not suffice for the fluorescing bidentate complex. Other substituted bipyridine ligands are known to be active for photocatalytic reduction\todo{ref lehn88?}, identifying the most likely conflicting feature of the terpyridine ligand to be the pendant arm, and its availability for chelation to the metal centre. While in the radical eximer form, the chelation site is sterically blocked by one of the three carbonyl groups. However, reorganization of the substituent carbonyls from a \textit{facial} orientation to a \textit{meridional} could allow for the free pyridine to form the metal-ligand bond, resulting in compound (X)\todo{Set up a detailed naming scheme that will work for the entire chapter, likely having to start with M\#\# or similar motif.} \todo{computationally back it up}. 
 
-Due to the ease of migration of the carbonyl groups, it is proposed that the mechanism that follows pathway X\todo{pathway numbrs as well} does not occur entirely axial to the ligand, but begins with coordination of a \ce{CO2} molecule in between the \textit{facial}-\ce{CO} ligands, forcing a carbonyl to the axial position. This \ce{CO2} bound in the plane of the lignad then undergoes hydrogenation to produce a molecule of \ce{H2O}. After the departure of the water molecule, the catalyst is left as a tetracarbonyl cation. While any of the carbonyl groups could be labile, the carbonyl at the axial position is replaced by the halide to return to the starting catalyst\autocite{shaver1992}. 
+Due to the ease of migration of the carbonyl groups, it is proposed that the `water-gas shift' mechanism does not occur entirely axial to the ligand, but begins with coordination of a \ce{CO2} molecule in between the \textit{facial}-\ce{CO} ligands, forcing a carbonyl to the axial position. This \ce{CO2} bound in the plane of the lignad then undergoes hydrogenation to produce a molecule of \ce{H2O}. After the departure of the water molecule, the catalyst is left as a tetracarbonyl cation. While any of the carbonyl groups could be labile, the carbonyl at the axial position is replaced by the halide to return to the starting catalyst\autocite{shaver1992}. 
 
 %======================================================================
-\section{Comparison Between Mechanistic Pathways}
+\section{Independent Mechanism Overview} \label{sec.independant}
 %======================================================================
+
+
+
+The three 
+%======================================================================
+\section{Comparison Between Mechanistic Pathways} \label{sec.compare}
+%======================================================================
+
+Previous studies in literature had only analyzed one possible mechanistic pathway (or a subsection thereof), without a fuller analysis of the competitiveness of each pathway relative to the others. Discussion on the tenability of each potential pathway relied on the \textit{in situ} observation of intermediates or transition states, the success (or lack thereof) of synthesis of the intermediates, and the relative production of by-products in the mechanistic trials.
 
 The overall energies for each of the mechanistic pathways shown in \autoref{fig.threepath} are shown in \autoref{fig.threeenergies}. 
 
-\missingfigure{Three mechanistic energy comparison}
+
 \begin{figure}[!htbp]
  \begin{center}
   \includegraphics[clip=true]{images/insertgraphic.eps}
