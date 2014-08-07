@@ -1,0 +1,29 @@
+
+
+
+TY  - JOUR
+T1  - Fast and Accurate Electrostatics in Metal Organic Frameworks with a Robust Charge Equilibration Parameterization for High-Throughput Virtual Screening of Gas Adsorption
+AU  - Kadantsev, Eugene S.
+AU  - Boyd, Peter G.
+AU  - Daff, Thomas D.
+AU  - Woo, Tom K.
+Y1  - 2013/08/28
+PY  - 2013
+DA  - 2013/09/19
+N1  - doi: 10.1021/jz401479k
+DO  - 10.1021/jz401479k
+T2  - The Journal of Physical Chemistry Letters
+JF  - The Journal of Physical Chemistry Letters
+JO  - J. Phys. Chem. Lett.
+SP  - 3056
+EP  - 3061
+VL  - 4
+IS  - 18
+PB  - American Chemical Society
+N2  - The charge equilibration (QEq) method has been parametrized to reproduce the ab-initio-derived electrostatic potential in a large and diverse training set of 543 metal organic frameworks (MOFs) containing the most popular Zn, Cu, and V structural building units (SBUs), 52 different organic carboxylate- and nitrogen-capped SBUs, and the 17 functional groups. The MOF electrostatic-potential-optimized charge scheme, or MEPO-QEq, was validated by evaluating the CO2 uptake and heats of adsorption in the 543 member training set and a nonoverlapping 693 member validation set. Compared with the results obtained from ab-initio-derived charges, the MEPO-QEq charges give Pearson (linear) and Spearman (rank-order) correlation coefficients of >0.97 for these two sets. MEPO-QEq enables near-ab-initio quality nonbonded electrostatic interactions to be evaluated using the fast QEq method for fast and accurate virtual high-throughput screening of gas-adsorption properties in MOFs.
+AB  - The charge equilibration (QEq) method has been parametrized to reproduce the ab-initio-derived electrostatic potential in a large and diverse training set of 543 metal organic frameworks (MOFs) containing the most popular Zn, Cu, and V structural building units (SBUs), 52 different organic carboxylate- and nitrogen-capped SBUs, and the 17 functional groups. The MOF electrostatic-potential-optimized charge scheme, or MEPO-QEq, was validated by evaluating the CO2 uptake and heats of adsorption in the 543 member training set and a nonoverlapping 693 member validation set. Compared with the results obtained from ab-initio-derived charges, the MEPO-QEq charges give Pearson (linear) and Spearman (rank-order) correlation coefficients of >0.97 for these two sets. MEPO-QEq enables near-ab-initio quality nonbonded electrostatic interactions to be evaluated using the fast QEq method for fast and accurate virtual high-throughput screening of gas-adsorption properties in MOFs.
+SN  - 1948-7185
+M3  - doi: 10.1021/jz401479k
+UR  - http://dx.doi.org/10.1021/jz401479k
+Y2  - 2014/08/05
+ER  - 
