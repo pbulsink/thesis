@@ -28,7 +28,7 @@ Reaction conditions in use in literature have remained typically unchanged since
 Both bidentate and terdentate \ce{$\kappa$^n(terpy)Re(CO)_{5-n}X} (n=2, 3) \textbf{2.1} and \textbf{2.2} complexes show no activity for \ce{CO2} reduction. Modification of testing time, light source, product analysis methods, solvent, sacrificial reductant, pH, presence of electrolyte, presence of \ce{H2O}, or variation of anion (X=Cl, Br, OTf, CN) shows no change of this inactivity. Testing of \ce{$\kappa$^2(bipy)Re(CO)3Cl} under the same reaction and testing conditions shows production of approximately 6 mL \ce{CO} from \ce{CO2} (~20\% conversion) in 1 hour of photolysis with visible ($\lambda$ \textgreater 400 nm) light, verifying the method, isolating the catalyst as the ineffective species. 
 
 %======================================================================
-\subsection{Rationalization of Results}
+\subsection{Rationalization of Results}\label{ss.rationalization}
 %======================================================================
 \todo{TEOA insertion, maybe clear is a acid, formate, carbonate, tricarbonylcation or other complex?}
 
@@ -42,7 +42,7 @@ Explanation for the lack of \ce{CO} production observed in the attempted photoch
  \end{center}
 \caption[Reorganization from catalytic eximer to form \textbf{3.1}]{Formation of \textbf{3.1} from catalytic excimer via reorganization of carbonyls and chelation of the pendant arm.}
 \label{scheme.tricarbonyl}
-\end{scheme} 
+\end{scheme}
 
 These variations provide some opportunity for identifying methods of deactivation. The bleaching (formation of a very pale yellow-green to clear species) may be due to the loss of the halide, followed by carbonyl reorganization and pendant arm complexation to form \textbf{3.1}, see \autoref{scheme.tricarbonyl}. This scheme is available to the mechanism via well known processes, lability of carbonyl groups around a metalc entre is well established. The resulting compound, \ce{[$\kappa$^3-(terpy)-Re(CO)3]+}, appears to not have been isolated in literature previously, direct comparisons to experimental colour or UV-Vis is not possible. However, \gls{ac.tddft} calculations with the same parameters used in \autoref{chap.newchem} (B3LYP functional, with a mixed LanL2DZ and TZVP basis set) demonstrate an absorption spectra with very little visible contributions, shown in \autoref{fig.uvvistricarb}. This corresponds to the bleached appearance of the reaction mixture. 
 
@@ -52,9 +52,17 @@ These variations provide some opportunity for identifying methods of deactivatio
  \end{center}
 \caption[Structure and absorption spectra of proposed \ce{[$\kappa$^3-(terpy)-Re(CO)3]+}]{Computational structure (inset) and predicted UV-Vis absorption spectra of \ce{[$\kappa$^3-(terpy)-Re(CO)3]+}}
 \label{fig.uvvistricarb}
-\end{figure} 
+\end{figure}
 
-The appearance of the irreversible red product may be the formation of triethanolamine-catalyst adducts\autocite{morimoto2013}. In the presence of DMF, TEOA has been shown to bind to the open site of the excimer via the amine's oxygen atom. This is susceptible to insertion of \ce{CO2} to form a --\ce{OC(O)C}--\ce{CH2CH2N(CH2CH2OH)2} group. 
+The appearance of the irreversible red product may be the formation of triethanolamine-catalyst adducts\autocite{morimoto2013}. In the presence of DMF, TEOA has been shown to bind to the open site of the excimer via the amine's oxygen atom. This is susceptible to insertion of \ce{CO2} to form a --\ce{OC(O)C}--\ce{CH2CH2N(CH2CH2OH)2} group. \Gls{ac.dft} studies on these two compounds suggest that they may be a coloured species, with predicted UV-Vis showing lower energy absorption than the catalyst itself (a red shift), demonstrated in \autoref{fig.ishitani}.
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[clip=true, keepaspectratio, width=120mm]{images/ishitani.eps}
+ \end{center}
+\caption[]{}
+\label{fig.ishitani}
+\end{figure}
 
 
 

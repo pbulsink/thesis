@@ -22,6 +22,7 @@ rm *.tdo
 rm *.toc
 rm *blx.bib
 rm ./images/*converted-to.pdf
+rm ./images/mos/*converted-to.pdf
 rm ./tables/*.aux
 rm ./tables/*.bak
 rm ./private/*.aux
