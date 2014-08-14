@@ -10,7 +10,7 @@ pdflatex thesis
 echo “Thesis Built”
 #dvipdfm thesis.dvi
 ENDTIME=$(date +%s)
-echo PDF Built and Saved in $(($ENDTIME - $STARTTIME)) seconds
+echo PDF Built and Saved in $(($ENDTIME - $STARTTIME)) seconds at $(date)
 open thesis.pdf
 exit
 
