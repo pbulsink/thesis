@@ -88,7 +88,7 @@ The mechanism begins with the addition of a \ce{CO2} molecule to the excimer \te
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[clip=true, width=120mm, keepaspectratio]{images/carbonatestruc.eps}
+  \includegraphics[clip=true, width=140mm, keepaspectratio]{images/carbonatestruc.eps}
  \end{center}
 \caption{DFT calculated structures for the `carbonate' mechanistic pathway}
 \label{fig.carbonatestruc}
@@ -118,7 +118,7 @@ After formation of the excimer \textbf{4.03}, the radical species extracts a hyd
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[clip=true, width=120mm, height=70mm, keepaspectratio]{images/insertgraphic.eps}
+  \includegraphics[clip=true, width=140mm, keepaspectratio]{images/formatestruc.eps}
  \end{center}
 \caption{DFT calculated structures for the `formate' mechanistic pathway}
 \label{fig.formatestruc}
@@ -145,7 +145,7 @@ The water-gas shift mechanism involves the addition of two protons from the redu
 \label{fig.watergas}
 \end{figure} 
 
-\Gls{ac.dft} energies of each of the compounds involved in this mechanism pathway are shown in \autoref{tab.wgsenergy}, along with the energy of solvation. \autoref{tab.wgsrxn} shows the potential energy change in each step of the reaction. The computed intermediate and transition state structures are shown in \autoref{fig.wgsstruc}.
+\Gls{ac.dft} energies of each of the compounds involved in this mechanism pathway are shown in \autoref{tab.wgsenergy}, along with the energy of solvation. \autoref{tab.wgsrxn} shows the potential energy change in each step of the reaction. The computed intermediate and transition state structures are shown in \autoref{fig.wgsaxstruc}.
 
 \input{tables/wgsenergy}
 \input{tables/wgsrxn}
@@ -154,15 +154,22 @@ This mechanistic pathway it thought to start by the same addition of \ce{CO2} th
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[clip=true, width=120mm, height=70mm, keepaspectratio]{images/insertgraphic.eps}
+  \includegraphics[clip=true, width=100mm, keepaspectratio]{images/wgsaxialstruc.eps}
  \end{center}
-\caption{DFT calculated structures for the `water-gas shift' mechanistic pathway}
-\label{fig.wgsstruc}
+\caption{DFT calculated structures for the axial `water-gas shift' mechanistic pathway}
+\label{fig.wgsaxstruc}
 \end{figure} 
 
-Typically, this reaction had been thought to proceed on the axial site of the catalyst, mirroring the pathways discussed above. However, due to the ease of migration of carbonyl groups in organometallic complexes, it is proposed that the `water-gas shift' mechanism does not occur axial to the ligand, but begins with relocation of a \ce{CO2} ligand to the axial position, followed by the coordination of \ce{CO2} into the now vacant planar open site, forming \textbf{4.34} (energies for this reaction are shown in \autoref{tab.siderxn}). This \ce{CO2} bound in the plane of the ligand then undergoes hydrogen addition and dehydration to produce a molecule of \ce{H2O}, continuing as before. Once reduced to the tetracarbonyl cluster, the catalyst could shed any \ce{CO} ligand and pick up a chloride anion to return to the neutral ground state. However, labilization of the axial carbonyl is the most favoured, formation of the planar coordinated chloride complex is not expected\autocite{shaver1992}
+Typically, this reaction had been thought to proceed on the axial site of the catalyst, mirroring the pathways discussed above. However, due to the ease of migration of carbonyl groups in organometallic complexes, it is proposed that the `water-gas shift' mechanism does not occur axial to the ligand, but begins with relocation of a \ce{CO2} ligand to the axial position, followed by the coordination of \ce{CO2} into the now vacant planar open site, forming \textbf{4.34} (energies for this reaction are shown in \autoref{tab.siderxn}, and \gls{ac.dft} computed structures are shown in \autoref{fig.wgseqstruc}). This \ce{CO2} bound in the plane of the ligand then undergoes hydrogen addition and dehydration to produce a molecule of \ce{H2O}, continuing as before. Once reduced to the tetracarbonyl cluster, the catalyst could shed any \ce{CO} ligand and pick up a chloride anion to return to the neutral ground state. However, labilization of the axial carbonyl is the most favoured, formation of the planar coordinated chloride complex is not expected\autocite{shaver1992}
 
 \input{tables/siderxn}
+\begin{figure}[!ht]
+ \begin{center}
+  \includegraphics[clip=true, width=140mm, keepaspectratio]{images/wgseqstruc.eps}
+ \end{center}
+\caption{DFT calculated structures for the equatorial `water-gas shift' mechanistic pathway}
+\label{fig.wgseqstruc}
+\end{figure} 
 
 This newly proposed mechanism provides a solution to a previously unexplained phenomenon. The exchange of carbonyl groups on the catalyst for \ce{^{13}CO} when using \ce{^{13}CO2} in the photoreduction is documented as early as Hawecker \textit{et al} in 1986\autocite{hawecker1986}. It was shown that complete exchange occurs with very few catalytic turnovers. Furthermore, Koike \textit{et al}. demonstrated that photochemical ligand substitution occurs at only axial sites relative to the $\alpha$-imino ligand\autocite{koike2002}, no exchange occurs at the equatorial site, nor can the \textit{fac}-\ce{(^{12}CO)2^{13}CO} be expected to shift the \ce{^{13}CO} to the equatorial position in the time-frame of the reaction. Thus the isotopic exchange does not proceed by independent uptake of produced \ce{^{13}CO}, but in fact the conversion to the \ce{^{13}CO} complex must be inherent to the reduction mechanism. 
 
@@ -184,11 +191,11 @@ The \todo{maybe take this section out? covered in rationalization section ch3} l
 
 Previous studies in literature had only analyzed one of the mechanistic pathways (or a subsection thereof), without a fuller analysis of the competitiveness of each pathway relative to the others. Discussion on the tenability of each potential pathway relied on the \textit{in situ} observation of intermediates or transition states, the success (or lack thereof) of synthesis of the intermediates, and the relative production of by-products in the mechanistic trials. 
 
-The overall energies for each of the mechanistic pathways shown in \autoref{fig.threepath} are shown in \autoref{fig.threeenergies}. 
+The overall potential energy diagrams for each of the mechanistic pathways in \autoref{fig.threepath} are shown in \autoref{fig.threeenergies}. Individual mechanistic pathways, and separate potential energy diagrams for gas phase and \gls{ac.dmf} solvated structures are listed in \autoref{app.energy}.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[clip=true]{images/insertgraphic.eps}
+  \includegraphics[clip=true, width=\textwidth]{images/pes_all.eps}
  \end{center}
 \caption[Reaction energies for three mechanistic pathways]{An overview of the energies of the three mechanistic pathways of photochemical \ce{CO2} reduction}
 \label{fig.threeenergies}
