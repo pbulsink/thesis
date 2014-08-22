@@ -1,0 +1,15 @@
+checkcites.lua -- a reference checker script (v1.0i)
+Copyright (c) 2012 Enrico Gregorio, Paulo Roberto Massa Cereda
+
+I found 205 citation(s).
+Oh no, I have to check more than one 'bib' file. Please wait.
+I found 210 reference(s).
+
+Unused reference(s) in your bibliography file(s): 5
+- statscan2012
+- calzaferri1992
+- klein1996
+- koike1997
+- vogt2014
+
+Undefined reference(s) in your TeX file: 0
