@@ -27,6 +27,7 @@ rm ./tables/*.aux
 rm ./tables/*.bak
 rm ./private/*.aux
 rm ./private/*.bak
+rm *.los
 ENDTIME=$(date +%s)
 echo Dir clean in $(($ENDTIME - $STARTTIME)) seconds
 exit
