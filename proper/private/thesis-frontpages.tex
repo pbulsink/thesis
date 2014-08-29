@@ -43,14 +43,13 @@ by \\
 \end{center}
 
 \newpage
- 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % PRELIMINARY PAGES
 \pagestyle{plain} % No headers, just page numbers
 \pagenumbering{roman} % Roman numerals
 \setcounter{page}{2}
-
+\cleardoublepage
 %----------------------------------------------------------------------
 % This page is not needed for the University of Ottawa
 % % Declaration Page
@@ -84,20 +83,20 @@ by \\
 \textbf{Abstract}
 \end{center}
 \input{\abstractfile}
-\newpage
+\cleardoublepage
 
 % Acknowledgements and/or Dedication Pages
 \begin{center}\textbf{Acknowledgements}\end{center}
 \input{\acknowledgementfile}
-\newpage
+\cleardoublepage
 
 % Pages which are generated automatically
-\setcounter{page}{6} % Set this counter to get correct page numbers
+\setcounter{page}{7} % Set this counter to get correct page numbers
 \tableofcontents
 \listoftables
 \listoffigures
 \listofschemes
-\newpage
+\cleardoublepage
 
 % Change page numbering back to Arabic numerals
 \pagenumbering{arabic}

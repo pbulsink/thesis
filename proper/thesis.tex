@@ -14,8 +14,8 @@
 %======================================================================
 \documentclass[%
 12pt,   % font size
-oneside,  % final version of thesis has to be submitted single-sided
-%twoside, % in case you want to print a draft on both sides of the page
+%oneside,  % final version of thesis has to be submitted single-sided
+twoside, % in case you want to print a draft on both sides of the page
 ]{report}
 
 %----------------------------------------------------------------------
@@ -150,12 +150,18 @@ oneside,  % final version of thesis has to be submitted single-sided
 % Chapters 
 % Include your "sub" source files here (must have extension .tex)
 \doublespacing
-\include{chapter1-intro} %"Organometallic, Photochem & catalysis, rhenium"
+\include{chapter1-intro} %"Organometallic, Photochem & catalysis, rhenium, CO2"
+\cleardoublepage
 \include{chapter2-newchem} %"new geometry chemistry"
+\cleardoublepage
 \include{chapter3-co2} %"CO2 Chemistry" 
+\cleardoublepage
 \include{chapter4-mechanism} %"Mechanism Study"
+\cleardoublepage
 \include{chapter5-turbocontrol} %"Turbocontrol"
+\cleardoublepage
 \include{chapter6-conclusion} %"Conclusion"
+\cleardoublepage
 %----------------------------------------------------------------------
 % END MATERIAL
 %----------------------------------------------------------------------
@@ -170,14 +176,18 @@ oneside,  % final version of thesis has to be submitted single-sided
 %\include{useful_pkgs} %"Some Useful \LaTeX2e Packages"
 %\include{appendix1-help} %"Sources of Information and Help"
 \include{appendix-exp}
+\cleardoublepage
 \include{appendix-xrays}
+\cleardoublepage
 \include{appendix-mos}
+\cleardoublepage
 \include{appendix-energy}
+\cleardoublepage
 \include{appendix-readme}
+\cleardoublepage
 \singlespacing
 \include{appendix-glos}
-
-
+\cleardoublepage
 
 %glossary
 % Bibliography 
