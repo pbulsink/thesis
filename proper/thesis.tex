@@ -124,6 +124,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 
 \usepackage{fancyvrb}
 \usepackage{cleveref}
+\usepackage[nottoc]{tocbibind}
 %----------------------------------------------------------------------
 % Non-standard packages I am using (things I've written, borrowed, etc.):
 %\usepackage{} % ... note that old .sty files can be included here
@@ -195,7 +196,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 %\bibliographystyle{style} % sorted alphabetically, labeled with numbers
 %\bibliography{bibliography/thesis} % names file keylatex.bib as my bibliography file 
 % OR, do it "by hand" inside a "thebibliography" enivironment
-\printbibliography
+\printbibliography[heading=bibintoc]
 % Index 
 % Put a \makeindex command in the Preamble if you use MakeIndex program
 % and put 
