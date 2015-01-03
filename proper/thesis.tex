@@ -85,10 +85,8 @@ oneside,  % final version of thesis has to be submitted single-sided
 %----------------------------------------------------------------------
 % Standard LaTeX2e packages I am using (as seen in "The LaTeX Companion"):
 \usepackage[]{graphicx} 
-	% ... if you want to include encapsulated postscript figures
-%\usepackage{makeidx} % ... if you want an index
-%\usepackage{amsmath} % ... if you need lots of math symbols
-\usepackage[bookmarks=true,linktocpage]{hyperref} % ... only needed for PDF generation
+\usepackage[a-1b]{pdfx}
+\hypersetup{bookmarks=true,linktocpage} % Because pdfx loads hyperref
 \usepackage{setspace}
 \usepackage{fixltx2e}
 \usepackage[backend=bibtex,style=chem-acs,biblabel=dot]{biblatex}
@@ -123,6 +121,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \usepackage{fancyvrb}
 \usepackage{cleveref}
 \usepackage[nottoc]{tocbibind}
+
 %----------------------------------------------------------------------
 
 
