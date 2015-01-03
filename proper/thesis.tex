@@ -16,6 +16,7 @@
 12pt,   % font size
 oneside,  % final version of thesis has to be submitted single-sided
 %twoside, % in case you want to print a draft on both sides of the page
+%draft,    % no images
 ]{report}
 
 %----------------------------------------------------------------------
@@ -31,14 +32,11 @@ oneside,  % final version of thesis has to be submitted single-sided
 \newcommand{\degree}{Master of Science} 
 \newcommand{\nameofprogram}{Chemistry}
 \newcommand{\academicunit}{Ottawa-Carleton Chemistry Institute}
-\newcommand{\graduationyear}{2014}
+\newcommand{\graduationyear}{2015}
 \newcommand{\supervisors}{Professors Darrin Richeson \& Tom Woo}
 
 \newcommand{\abstractfile}{abstract.tex}
 \newcommand{\acknowledgementfile}{acknowledgement.tex}
-%----------------------------------------------------------------------
-% Reprocess only those files which have changed recently:
-%\includeonly{intro,creating,commands} 
 %----------------------------------------------------------------------
 % Create a listing in the log of all files needed to process this document
 \listfiles
@@ -113,7 +111,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \usepackage{float}
 \floatstyle{plaintop}
 \restylefloat{table}
-
+\usepackage[titletoc]{appendix}
 \usepackage{pdflscape}
 \usepackage{afterpage}
 \usepackage{subcaption}
@@ -126,8 +124,7 @@ oneside,  % final version of thesis has to be submitted single-sided
 \usepackage{cleveref}
 \usepackage[nottoc]{tocbibind}
 %----------------------------------------------------------------------
-% Non-standard packages I am using (things I've written, borrowed, etc.):
-%\usepackage{} % ... note that old .sty files can be included here
+
 
 %======================================================================
 %   L O G I C A L    D O C U M E N T
@@ -149,7 +146,6 @@ oneside,  % final version of thesis has to be submitted single-sided
 %## Edit this part
 %###################################
 % Chapters 
-% Include your "sub" source files here (must have extension .tex)
 \doublespacing
 \include{chapter1-intro} %"Organometallic, Photochem & catalysis, rhenium, CO2"
 \cleardoublepage
@@ -170,12 +166,10 @@ oneside,  % final version of thesis has to be submitted single-sided
 %## Edit this part
 %###################################
 % Appendices
-\appendix
+\begin{appendices}
 \captionsetup{list=no}
 % Designate with \appendix declaration which just changes numbering style 
 % from here on
-%\include{useful_pkgs} %"Some Useful \LaTeX2e Packages"
-%\include{appendix1-help} %"Sources of Information and Help"
 \include{appendix-exp}
 \cleardoublepage
 \include{appendix-xrays}
@@ -189,20 +183,11 @@ oneside,  % final version of thesis has to be submitted single-sided
 \singlespacing
 \include{appendix-glos}
 \cleardoublepage
+\end{appendices}
 
-%glossary
 % Bibliography 
-% If done using the BibTeX program, use
-%\bibliographystyle{style} % sorted alphabetically, labeled with numbers
-%\bibliography{bibliography/thesis} % names file keylatex.bib as my bibliography file 
-% OR, do it "by hand" inside a "thebibliography" enivironment
 \printbibliography[heading=bibintoc]
-% Index 
-% Put a \makeindex command in the Preamble if you use MakeIndex program
-% and put 
-% \printindex % here
-% OR, do it "by hand" inside \begin{theindex} ... \end{theindex}
-\listoftodos
+
 %----------------------------------------------------------------------
 \end{document}
 %======================================================================
