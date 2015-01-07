@@ -4,7 +4,7 @@ This repo holds the writing of my Master's thesis, "Exploring the Chemistry of R
 
 Writing of this thesis is completed, no further changes will be made. 
 
-For the thesis pdf, please view the pdf from [github](http://github.com/pbulsink/thesis/proper/bulsink_philip_2015_thesis.pdf).
+For the thesis pdf, please view the pdf from [github](https://github.com/pbulsink/thesis/blob/master/proper/bulsink_philip_2015_thesis.pdf?raw=true).
 
 
 
